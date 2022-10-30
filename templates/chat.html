@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chat</title>
+  </head>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Fasthand&family=Island+Moments&family=Montserrat&family=Open+Sans&family=Roboto&display=swap");
+    body {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .chat {
+      border: 1px solid black;
+      width: 300px;
+      padding: 30px;
+      text-align: center;
+      margin: auto;
+      margin-top: 100px;
+    }
+
+    ul {
+      list-style: none;
+      text-align: start;
+    }
+
+    ul h1 {
+      font-family: "Fasthand";
+      font-size: 30px;
+    }
+
+    li {
+      width: 180px;
+      height: 50px;
+      padding-top: 10px;
+      padding-left: 10px;
+      right: 0px;
+      background-color: #50a2a7;
+      border-radius: 15px 20px 20px 5px;
+      margin-top: 10px;
+    }
+
+    form {
+      margin: auto;
+    }
+
+    form label {
+      margin-left: 20px;
+    }
+  </style>
+  <body>
+    <div class="chat">
+      <ul>
+        <h1>Chat</h1>
+        <hr />
+        {% for chave in mensagens %}
+        <li>{{ chave[0]}}: {{chave[1]}}</li>
+        {%endfor%}
+      </ul>
+    </div>
+    <form action="" method="get" style="margin-top: 30px">
+      <label>Nome:</label>
+      <input type="text" name="nome" />
+      <label>Mensagem:</label>
+      <input type="text" name="mensagem" />
+      <button type="submit">Enviar</button>
+    </form>
+  </body>
+</html>
